@@ -57,5 +57,8 @@ import orderRoute from "./routes/order.js";
 app.use("/api/v1", userRoute);
 app.use("/api/v1", orderRoute);
 
+
+app.use(express.static("build"));
+
 // Using Error Middleware
 app.use(errorMiddleware);
