@@ -31,7 +31,8 @@ router.get(
 
   passport.authenticate("google"),
   (req, res, next) => {
-     res.send("<h1>LOG IN </h1>");
+     // res.send("<h1>LOG IN </h1>");
+     res.redirect('https://burger-app-backend-v1.onrender.com');
   }
 );
 
