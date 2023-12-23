@@ -17,12 +17,27 @@ router.get(
   })
 );
 
+// router.get(
+//   "/login",
+//   passport.authenticate("google", {
+//     successRedirect: process.env.FRONTEND_URL,
+//   })
+// );
+
+
+
 router.get(
   "/login",
-  passport.authenticate("google", {
-    successRedirect: process.env.FRONTEND_URL,
-  })
+
+  passport.authenticate("google"),
+  (req, res, next) => {
+    // res.redirect("/api/v1/me");
+    // res.redirect('http://localhost:3000');
+    res.send("<h1>LOG IN </h1>");
+  }
 );
+
+
 
 router.get("/me", isAuthenticated, myProfile);
 
